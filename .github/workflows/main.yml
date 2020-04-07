@@ -21,9 +21,10 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: Build and Push
-      uses: jerray/publish-docker-action@master
+
+    - name: Build Docker image
+      uses: flownative/action-docker-build@v1
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        registry: docker.pkg.github.com
-        repository: egion/rm-landingpage:latest
+        tag_ref: latest
+        image_name: egion/rm-landingpage
+        registry_password: ${{ secrets.GITHUB_TOKEN }}
