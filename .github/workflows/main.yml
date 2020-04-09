@@ -25,6 +25,7 @@ jobs:
     - name: Build Docker image
       uses: flownative/action-docker-build@v1
       with:
+        tag_ref: .
         image_tag: latest
         image_name: egion/rm-landingpage
         registry_password: ${{ secrets.GITHUB_TOKEN }}
