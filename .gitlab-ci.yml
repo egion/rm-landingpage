@@ -14,8 +14,8 @@ build:images_development:
     - docker info
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - docker build -t registry.gitlab.com/remedymatch/rm-landingpage:development .
-    - docker push registry.gitlab.com/remedymatch/rm-landingpage:development
+    - docker build -t registry.gitlab.com/remedymatch/rm-landingpage-test:development .
+    - docker push registry.gitlab.com/remedymatch/rm-landingpage-test:development
 
 build:images_latest:
   stage: images
@@ -31,7 +31,7 @@ build:images_latest:
     - docker info
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - docker build -t registry.gitlab.com/remedymatch/rm-landingpage:development .
-    - docker push registry.gitlab.com/remedymatch/rm-landingpage:development
-    - docker build -t registry.gitlab.com/remedymatch/rm-landingpage:latest .
-    - docker push registry.gitlab.com/remedymatch/rm-landingpage:latest
+    - docker build -t registry.gitlab.com/remedymatch/rm-landingpage-test:development .
+    - docker push registry.gitlab.com/remedymatch/rm-landingpage-test:development
+    - docker build -t registry.gitlab.com/remedymatch/rm-landingpage-test:latest .
+    - docker push registry.gitlab.com/remedymatch/rm-landingpage-test:latest
